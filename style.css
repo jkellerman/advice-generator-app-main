@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 92.5%;
-  max-height: 315px;
+
   margin: 7.5rem auto 14.5rem;
   display: flex;
   flex-direction: column;
