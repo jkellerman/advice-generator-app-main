@@ -3,21 +3,38 @@ const quote = document.querySelector(".quote");
 const dice = document.querySelector(".dice__container");
 const url = "https://api.adviceslip.com/advice";
 
-function getData() {
-  fetch(url)
-    .then((r) => r.json())
-    .then((jsonResponse) => {
-      let data = jsonResponse.slip;
-      let adviceNum = data.id;
-      let advice = data.advice;
+const getData = async () => {
+  const response = await fetch(url);
+  const jsonResponse = await response.json();
+  let data = jsonResponse.slip;
+  let adviceNum = data.id;
+  let advice = data.advice;
 
-      num.innerText = `Advice #${adviceNum}`;
-      quote.innerText = `"${advice}"`;
-    });
-}
+  num.innerText = `Advice #${adviceNum}`;
+  quote.innerText = `"${advice}"`;
+};
 
 getData();
 
 dice.addEventListener("click", () => {
   getData();
 });
+
+// function getData() {
+//   fetch(url)
+//     .then((r) => r.json())
+//     .then((jsonResponse) => {
+//       let data = jsonResponse.slip;
+//       let adviceNum = data.id;
+//       let advice = data.advice;
+
+//       num.innerText = `Advice #${adviceNum}`;
+//       quote.innerText = `"${advice}"`;
+//     });
+// }
+
+// getData();
+
+// dice.addEventListener("click", () => {
+//   getData();
+// });
