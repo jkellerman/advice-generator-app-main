@@ -78,3 +78,14 @@ footer {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+@media (min-width: 900px) {
+  .container {
+    max-width: 540px;
+    max-height: 332px;
+  }
+
+  .quote {
+    width: 85%;
+  }
+}
