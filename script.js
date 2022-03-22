@@ -4,14 +4,17 @@ const dice = document.querySelector(".dice__container");
 const url = "https://api.adviceslip.com/advice";
 
 const getData = async () => {
-  const response = await fetch(url);
-  const jsonResponse = await response.json();
-  let data = jsonResponse.slip;
-  let adviceNum = data.id;
-  let advice = data.advice;
-
-  num.innerText = `Advice #${adviceNum}`;
-  quote.innerText = `"${advice}"`;
+  try {
+    const response = await fetch(url, { cache: "no-cache" });
+    const jsonResponse = await response.json();
+    let data = jsonResponse.slip;
+    let adviceNum = data.id;
+    let advice = data.advice;
+    num.innerText = `Advice #${adviceNum}`;
+    quote.innerText = `"${advice}"`;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 getData();

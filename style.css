@@ -23,7 +23,6 @@ body {
 
 .container {
   width: 92.5%;
-
   margin: 7.5rem auto 14.5rem;
   display: flex;
   flex-direction: column;
@@ -90,7 +89,6 @@ footer {
 
   .container {
     max-width: 540px;
-    max-height: 332px;
   }
 
   .quote {
